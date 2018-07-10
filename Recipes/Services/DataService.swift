@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-let apiURL = "http://food2fork.com/api/search?key=\(key)"
-let key = "69bb07d90a6fca99b6dfa3e022c91df3"
-
 protocol DataServiceDelegate {
     func load()
 }
 
 class DataService {
+    
+    lazy var apiURL = "http://food2fork.com/api/search?key=\(key)"
+    lazy var key = "69bb07d90a6fca99b6dfa3e022c91df3"
     
     static let shared = DataService()
     var delegate: DataServiceDelegate?

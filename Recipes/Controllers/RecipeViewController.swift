@@ -16,7 +16,7 @@ class RecipeViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webkitWebView: WKWebView!
     
     lazy var rightButton = {
-        return UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(self.showModalSelect))
+        return UIBarButtonItem(image: UIImage(named: "favorite"), style: .plain, target: self, action: #selector(self.showModalSelect))
     }
     
     override func viewDidLoad() {
@@ -33,6 +33,16 @@ class RecipeViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+        let alertViewController = UIAlertController(title: "Error", message: "could not connect to the server, check your connection!", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "OK", style: .default) {[unowned self] (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertViewController.addAction(action1)
+        present(alertViewController, animated: true, completion: nil)
     }
     
     @objc func showModalSelect() {

@@ -240,9 +240,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRf-UG-YOC">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRf-UG-YOC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -256,6 +255,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cnA-2M-mPY" firstAttribute="centerY" secondItem="xXz-N2-EZA" secondAttribute="centerY" id="4gJ-ao-VBI"/>
+                            <constraint firstItem="lRf-UG-YOC" firstAttribute="trailing" secondItem="zWy-rD-Ie5" secondAttribute="trailing" id="KKd-fx-vQd"/>
+                            <constraint firstItem="lRf-UG-YOC" firstAttribute="leading" secondItem="zWy-rD-Ie5" secondAttribute="leading" id="WaC-VO-62F"/>
+                            <constraint firstItem="lRf-UG-YOC" firstAttribute="top" secondItem="zWy-rD-Ie5" secondAttribute="top" id="YR0-Kg-PW1"/>
+                            <constraint firstItem="lRf-UG-YOC" firstAttribute="bottom" secondItem="zWy-rD-Ie5" secondAttribute="bottom" id="jfl-Uk-6cM"/>
                             <constraint firstItem="cnA-2M-mPY" firstAttribute="centerX" secondItem="xXz-N2-EZA" secondAttribute="centerX" id="pnG-e0-6Uc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWy-rD-Ie5"/>
