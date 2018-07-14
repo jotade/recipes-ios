@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var cdManager = CoreDataManager(modelName: "Recipes")!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        do {
+            Network.reachability = try Reachability(hostname: "www.food2fork.com")
+            do {
+                try Network.reachability?.start()
+            } catch let error as Network.Error {
+                print(error)
+            } catch {
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
         return true
     }
 

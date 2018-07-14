@@ -29,6 +29,13 @@ class RecipeViewController: UIViewController, WKNavigationDelegate {
             title = recipe.title
             webkitWebView.load(URLRequest(url: URL(string: recipe.source_url!)!))
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
+    }
+    @objc func statusManager(_ notification: Notification) {
+        guard let status = Network.reachability?.status else { return }
+        if status == Network.Status.unreachable  {
+            showErrorAlert()
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -36,6 +43,10 @@ class RecipeViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        showErrorAlert()
+    }
+    
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         showErrorAlert()
     }
     

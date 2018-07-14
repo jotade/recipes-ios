@@ -11,6 +11,7 @@
 		4547618E20F27016001BE3E5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547618D20F27016001BE3E5 /* Recipe.swift */; };
 		4547619120F2FDDD001BE3E5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547619020F2FDDD001BE3E5 /* SearchTableViewCell.swift */; };
 		4547619320F30B76001BE3E5 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547619220F30B76001BE3E5 /* RecipeViewController.swift */; };
+		4553130C20FAA36D009F61AE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4553130B20FAA36D009F61AE /* Reachability.swift */; };
 		457533C820F38ECB004FAADC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457533C720F38ECB004FAADC /* CoreDataManager.swift */; };
 		458C48D320F26559002E39A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C48D220F26559002E39A0 /* AppDelegate.swift */; };
 		458C48D520F26559002E39A0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C48D420F26559002E39A0 /* SearchViewController.swift */; };
@@ -27,6 +28,7 @@
 		4547618D20F27016001BE3E5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		4547619020F2FDDD001BE3E5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		4547619220F30B76001BE3E5 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		4553130B20FAA36D009F61AE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		457533C720F38ECB004FAADC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		458C48CF20F26559002E39A0 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		458C48D220F26559002E39A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			path = "Table cells";
 			sourceTree = "<group>";
 		};
+		4553130A20FAA34D009F61AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4553130B20FAA36D009F61AE /* Reachability.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		457533C620F38EB8004FAADC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		458C48D120F26559002E39A0 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				4553130A20FAA34D009F61AE /* Utils */,
 				457533C620F38EB8004FAADC /* Managers */,
 				4547618B20F26DB3001BE3E5 /* Model */,
 				4547618A20F26DA0001BE3E5 /* Views */,
@@ -287,6 +298,7 @@
 				4547619120F2FDDD001BE3E5 /* SearchTableViewCell.swift in Sources */,
 				4547618820F26D74001BE3E5 /* DataService.swift in Sources */,
 				457533C820F38ECB004FAADC /* CoreDataManager.swift in Sources */,
+				4553130C20FAA36D009F61AE /* Reachability.swift in Sources */,
 				4547618E20F27016001BE3E5 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
