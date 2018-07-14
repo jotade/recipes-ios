@@ -35,7 +35,15 @@ class RecipeViewController: UIViewController, WKNavigationDelegate {
         activityIndicator.stopAnimating()
     }
     
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        showErrorAlert()
+    }
+    
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        showErrorAlert()
+    }
+    
+    func showErrorAlert() {
         activityIndicator.stopAnimating()
         let alertViewController = UIAlertController(title: "Error", message: "could not connect to the server, check your connection!", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "OK", style: .default) {[unowned self] (action) in

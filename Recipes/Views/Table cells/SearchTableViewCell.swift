@@ -27,10 +27,11 @@ class SearchTableViewCell: UITableViewCell {
     func downloadImage(imageURL: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(imageURL).responseData(queue: .main, completionHandler: { (data) in
-            let image = UIImage(data: data.data!)!
-            image.af_inflate()
-            let circularImage = image.af_imageRoundedIntoCircle()
-            self.recipeImageView.image = circularImage
+            if let image = UIImage(data: data.data!) {
+                image.af_inflate()
+                let circularImage = image.af_imageRoundedIntoCircle()
+                self.recipeImageView.image = circularImage
+            }
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         })
     }

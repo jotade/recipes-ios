@@ -23,15 +23,19 @@ class DataService {
     
     func searchRecipe(needle:String, completion: @escaping (_ done: Bool)->()) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        Alamofire.request("\(apiURL)&q=\(needle)").responseJSON { response in
-            if let recipes = response.result.value as? [String: Any] {
-                Recipe.parseRecipes(res: recipes)
-                self.delegate?.load()
-                completion(true)
-            } else {
-                completion(false)
+        if let  url =  "\(apiURL)&q=\(needle)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+            Alamofire.request(url).responseJSON { response in
+                if let recipes = response.result.value as? [String: Any] {
+                    Recipe.parseRecipes(res: recipes)
+                    self.delegate?.load()
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        } else {
+            completion(false)
         }
     }
 }
